@@ -1,0 +1,14 @@
+version: '2.2'
+
+services:
+  box:
+    build: .
+    stdin_open: true
+    tty: true
+    restart: always
+    volumes:
+      - .:/opt/inventory-bridge
+    environment:
+      - COMPOSE_PROJECT_NAME=typescript-playground
+      - NODE_ENV=development
+    network_mode: bridge 
